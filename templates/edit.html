@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block main %}
+    <form class="container" action="/edit" method="post">
+        <input name="id" type="hidden" value="{{ data[0]['id'] }}">
+        <h3 class="text-center">Edit Item</h3>
+        <div class="row p-2 g-3">
+            <div class="col">
+                <label class="form-label">Title</label>
+                <input name="title" class="form-control" type="text" value="{{ data[0]['name'] }}" autocomplete="off">
+            </div>
+            <div class="col">
+                <label class="form-label">Barcode</label>
+                <input name="barcode" class="form-control" type="text" value="{{ data[0]['barcode'] }}" autocomplete="off">
+            </div>
+        </div>
+        <div class="row p-2 g-3">
+            <div class="col">
+                <label class="form-label">Amount</label>
+                <input name="amount" class="form-control" type="text" value="{{ data[0]['amount'] }}" autocomplete="off">
+            </div>
+            <div class="col">
+                <label class="form-label">Price $</label>
+                <input name="price" class="form-control" type="text" value="{{ data[0]['price'] }}" autocomplete="off">
+            </div>
+        </div>
+        <div class="row p-2">
+            <div class="col">
+                <a class="btn btn-secondary w-100" href="/delete?id={{ data[0]['id'] }}">Delete Item</a>
+            </div>
+            <div class="col">
+                <button class="btn btn-success w-100" type="submit">Continue</button>
+            </div>
+        </div>
+    </form>
+{% endblock%}

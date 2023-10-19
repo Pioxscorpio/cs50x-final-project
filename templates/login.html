@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid d-flex bg-dark align-items-center justify-content-center" style="height: 100vh;">
+    <form action="/login" method="post" class="d-flex flex-column gap-2">
+        <h1 class="text-light">Login</h1>
+        <input name="username" class="form-control" type="text" placeholder="Username" autocomplete="off">
+        <input name="password" class="form-control" type="password" placeholder="Password">
+        <button class="btn btn-primary" type="submit">Continue</button>
+        <a class="text-center" href="/register">Create an account</a>
+    </form>
+</div>
+{% endblock %}

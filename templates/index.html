@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <a href="/add" class="btn btn-success my-2 float-end">Add item</a>
+    <table class="table table-striped border">
+        <tr>
+            <th>Barcode</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th></th>
+        </tr>
+        {% for item in inventory %}
+        <tr>
+            <td>{{ item["barcode"] }}</td>
+            <td>{{ item["name"] }}</td>
+            <td>${{ item["price"] }}</td>
+            <td>{{ item["amount"] }}</td>
+            <td>
+                <a href="/edit?id={{ item['id'] }}" class="btn btn-secondary btn-sm">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock%}
