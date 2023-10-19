@@ -1,16 +1,24 @@
 """ app.py """
+# Used for database management
 from cs50 import SQL
+# Main Flask libraries
 from flask import Flask, flash, redirect, request, render_template, session
+# Used for encrypt and decrypt password
 from werkzeug.security import check_password_hash, generate_password_hash
+# Used for session management
 from flask_session import Session
-
+# Loads authentication fuction from external file
 from auth import login_required
 
+# Initialize Flask app
 app = Flask(__name__)
+# Set the session so that it does not close when time passes
 app.config["SESSION_PERMANENT"] = False
+# Set session type to filesytem
 app.config["SESSION_TYPE"] = "filesystem"
+# Initialize Session
 Session(app)
-
+# Initilize db as the database
 db = SQL("sqlite:///app.db")
 
 @app.after_request
@@ -24,9 +32,15 @@ def after_request(response):
 @app.route("/")
 @login_required
 def index():
-    """ Index """
+    """ Index"""
+
+    # Gets the user id
     user_id = session.get("user_id")
+
+    # Execute query to get all inventory items from this user
     inventory = db.execute("SELECT * FROM inventory WHERE user_id = ?", user_id)
+
+    # Render index.html template along with inventory data
     return render_template("index.html", inventory=inventory)
 
 @app.route("/login", methods=["GET", "POST"])
@@ -72,16 +86,17 @@ def login():
 def logout():
     """Log user out"""
 
-    # Forget any user_id
+    # Clear any user_id
     session.clear()
 
-    # Redirect user to login form
+    # Redirect user to login
     return redirect("/")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
     if request.method == "POST":
+        # save form data into variables
         username = request.form.get("username")
         passw = request.form.get("password")
         confirmation = request.form.get("confirmation")
@@ -90,16 +105,22 @@ def register():
         if username != "" and not db.execute(
             "SELECT 1 FROM users WHERE username = ?", username
         ):
+            # Checks if data from password input aren't empty and is equal to confirmation
             if passw != "" and confirmation != "" and passw == confirmation:
+                # Insert into database
                 db.execute(
                     "INSERT INTO users (username, hash) VALUES (?, ?)",
                     username,
                     generate_password_hash(passw),
                 )
+                # Redirects to login screen
                 return redirect("/login")
+        # If username is in use, redirect and show alert
         flash("The user name is in use!", "alert-danger")
         return redirect("/register")
     else:
+        # If request is get show register view
+        # hide=lambda:true is used to hide the navbar
         return render_template("register.html", hide=lambda:True)
 
 @app.route("/password", methods=["GET", "POST"])
@@ -191,11 +212,11 @@ def edit():
             if len(data):
                 return render_template("edit.html", data=data)
     return "400"
-    
+
 @app.route("/delete", methods=["GET"])
 def delete():
     """Delete"""
-    item_id = request.args.get("id") 
+    item_id = request.args.get("id")
     user_id = session.get("user_id")
     if item_id:
         db.execute("DELETE FROM inventory WHERE id = ? AND user_id = ?", item_id, user_id)
