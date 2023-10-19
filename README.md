@@ -1,7 +1,7 @@
 # CS50 Inventory
 #### Video Demo: https://youtu.be/aKq0a-U_riw>
 #### Description:
-Effortlessly manage your inventory with our user-friendly web application built using Flask, SQLite, and Bootstrap. THis application provides a seamless experience for tracking your inventory items, ensuring you always have a clear overview of your stock levels.
+Effortlessly manage your inventory with our user-friendly web application built using Flask, SQLite, and Bootstrap. This application provides a seamless experience for tracking your inventory items, ensuring you always have a clear overview of your stock levels.
 
 Create an account to access your personalized inventory dashboard, where you can add, edit, or remove items with ease. Our intuitive interface makes managing your inventory a breeze, even for those with no prior experience.
 
@@ -18,20 +18,29 @@ Installation
 Download and Install [Python](https://www.python.org/downloads/)
 
 Clone the repository:
-````Bash
+````bash
 git clone https://github.com/me50/Pioxscorpio.git
 ````
 Install dependencies:
-````Bash
+````bash
 pip install Flask
 pip install Flask-Session
 pip install cs50
 pip install request
 ````
 Start the application:
-````Bash
+````bash
 flask run
-The application will be running on http://localhost:5000.
+The application will be running on http://localhost:5000
+````
+
+Database Schema:
+````sql
+CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL, cash NUMERIC NOT NULL DEFAULT 10000.00);
+
+CREATE TABLE sqlite_sequence(name,seq);
+
+CREATE TABLE inventory (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name TEXT NOT NULL, barcode TEXT, price NUMERIC NOT NULL DEFAULT 0.00, amount INTEGER NOT NULL DEFAULT 0, user_id INTEGER);
 ````
 
 Usage
