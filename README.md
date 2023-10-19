@@ -1,10 +1,13 @@
 # CSx50 Inventory
 ## Video Demo: https://youtu.be/aKq0a-U_riw>
-## Description:
-This web application is designed to manage and track inventory for small businesses. It provides a user-friendly interface for managing products.
+## Description
+Effortlessly manage your inventory with our user-friendly web application built using Flask, SQLite, and Bootstrap. THis application provides a seamless experience for tracking your inventory items, ensuring you always have a clear overview of your stock levels.
 
-## Features
-Manage products: Add, edit, and delete products. Track product quantities, and prices.
+Create an account to access your personalized inventory dashboard, where you can add, edit, or remove items with ease. Our intuitive interface makes managing your inventory a breeze, even for those with no prior experience.
+
+Additionally, our robust security measures ensure your data remains protected. Create a strong password and modify it whenever necessary to maintain the integrity of your account.
+
+Streamline your inventory management process with our comprehensive web application and experience the benefits of organized stock control
 
 Technology Stack
 - Frontend: Bootstrap 5
