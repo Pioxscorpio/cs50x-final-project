@@ -1,4 +1,4 @@
-# CSx50 Inventory
+# CS50 Inventory
 ## Video Demo: https://youtu.be/aKq0a-U_riw>
 ## Description
 Effortlessly manage your inventory with our user-friendly web application built using Flask, SQLite, and Bootstrap. THis application provides a seamless experience for tracking your inventory items, ensuring you always have a clear overview of your stock levels.
