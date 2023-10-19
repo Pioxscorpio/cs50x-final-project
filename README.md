@@ -1,6 +1,6 @@
 # CS50 Inventory
-## Video Demo: https://youtu.be/aKq0a-U_riw>
-## Description
+#### Video Demo: https://youtu.be/aKq0a-U_riw>
+#### Description:
 Effortlessly manage your inventory with our user-friendly web application built using Flask, SQLite, and Bootstrap. THis application provides a seamless experience for tracking your inventory items, ensuring you always have a clear overview of your stock levels.
 
 Create an account to access your personalized inventory dashboard, where you can add, edit, or remove items with ease. Our intuitive interface makes managing your inventory a breeze, even for those with no prior experience.
@@ -14,7 +14,7 @@ Technology Stack
 - Backend: Flask (Python)
 - Database: SQLite3
 
-## Installation
+Installation
 Download and Install [Python](https://www.python.org/downloads/)
 
 Clone the repository:
@@ -34,12 +34,12 @@ flask run
 The application will be running on http://localhost:5000.
 ````
 
-## Usage
+Usage
 To view the **Products**, navigate to the main page.
 To add a new **Products**, click the green **Add item** button at the top right side. To **Edit** a product click the edit button.
 
-## Contributing
+Contributing
 Please feel free to contribute to this project by submitting pull requests or opening issues.
 
-## License
+License
 This project is licensed under the MIT License.
