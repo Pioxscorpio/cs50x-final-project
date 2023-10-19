@@ -1,9 +1,42 @@
-# CS50x Inventory
-#### Video Demo:  https://youtu.be/aKq0a-U_riw>
-#### Description:
+# CSx50 Inventory
+## Video Demo: https://youtu.be/aKq0a-U_riw>
+## Description:
+This web application is designed to manage and track inventory for small businesses. It provides a user-friendly interface for managing products.
 
-I utilized Flask to develop a simple inventory management web application. This application features a robust user system that empowers users to add, modify, and remove inventory items seamlessly.
+## Features
+Manage products: Add, edit, and delete products. Track product quantities, and prices.
 
-Additionally, the application incorporates user registration and password management functionalities, ensuring a secure and personalized experience.
+Technology Stack
+- Frontend: Bootstrap 5
+- Backend: Flask (Python)
+- Database: SQLite3
 
-To ensure a seamless user experience across various devices, the application's frontend is built with Bootstrap 5, guaranteeing responsiveness and adaptability.
+## Installation
+Download and Install [Python](https://www.python.org/downloads/)
+
+Clone the repository:
+````Bash
+git clone https://github.com/me50/Pioxscorpio.git
+````
+Install dependencies:
+````Bash
+pip install Flask
+pip install Flask-Session
+pip install cs50
+pip install request
+````
+Start the application:
+````Bash
+flask run
+The application will be running on http://localhost:5000.
+````
+
+## Usage
+To view the **Products**, navigate to the main page.
+To add a new **Products**, click the green **Add item** button at the top right side. To **Edit** a product click the edit button.
+
+## Contributing
+Please feel free to contribute to this project by submitting pull requests or opening issues.
+
+## License
+This project is licensed under the MIT License.
