@@ -9,26 +9,28 @@ Additionally, our robust security measures ensure your data remains protected. C
 
 Streamline your inventory management process with our comprehensive web application and experience the benefits of organized stock control
 
-Technology Stack
+**Technology Stack**
+
 - Frontend: Bootstrap 5
 - Backend: Flask (Python)
 - Database: SQLite3
 
-Installation
-Download and Install [Python](https://www.python.org/downloads/)
+**Installation**
 
-Clone the repository:
+Download and Install [Python](https://www.python.org/downloads/) (3.12.0)
+
+1. Clone the repository:
 ````bash
 git clone https://github.com/me50/Pioxscorpio.git
 ````
-Install dependencies:
+2. Install dependencies:
 ````bash
 pip install Flask
 pip install Flask-Session
 pip install cs50
 pip install request
 ````
-Start the application:
+3. Start the application:
 ````bash
 flask run
 The application will be running on http://localhost:5000
@@ -36,19 +38,31 @@ The application will be running on http://localhost:5000
 
 Database Schema:
 ````sql
-CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL, cash NUMERIC NOT NULL DEFAULT 10000.00);
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL,
+    cash NUMERIC NOT NULL DEFAULT 10000.00,
+    );
 
 CREATE TABLE sqlite_sequence(name,seq);
 
-CREATE TABLE inventory (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name TEXT NOT NULL, barcode TEXT, price NUMERIC NOT NULL DEFAULT 0.00, amount INTEGER NOT NULL DEFAULT 0, user_id INTEGER);
+CREATE TABLE inventory (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name TEXT NOT NULL, barcode TEXT,
+    price NUMERIC NOT NULL DEFAULT 0.00,
+    amount INTEGER NOT NULL DEFAULT 0,
+    user_id INTEGER,
+    );
 ````
 
-Usage
+**Usage**
+
 To view the **Products**, navigate to the main page.
 To add a new **Products**, click the green **Add item** button at the top right side. To **Edit** a product click the edit button.
 
-Contributing
+**Contributing**
+
 Please feel free to contribute to this project by submitting pull requests or opening issues.
 
-License
+**License**
+
 This project is licensed under the MIT License.
